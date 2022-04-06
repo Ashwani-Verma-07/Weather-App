@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <header><i class="bx bx-left-arrow-alt"></i>Weather App</header>
+        <section class="input-part">
+            <p class="info-txt">Please Enter a Valid City Name</p>
+            <input type="text" placeholder="Enter city name" spellcheck="false" required>
+            <div class="separator"></div>
+            <button>Get Device Location</button>
+        </section>
+        <section class="weather-part">
+            <img src="#" alt="weather logo">
+            <div class="temp">
+                <span class="numb">_</span>
+                <span class="deg">°</span>C
+            </div>
+            <div class="weather">_ _</div>
+            <div class="location">
+               <i class="bx bx-map"></i>
+               <span >_, _</span>
+            </div>
+            <div class="bottom-details">
+                <div class="column feels" style=" border-right: 2px solid #bfbfbf;">
+              <i class="bx bxs-thermometer"></i>
+<div class="details">
+    <div class="temp" style="font-size: 18px;">
+        <span class="numb-2" style="font-weight: 600;">_</span>
+        <span class="deg" style="font-weight: 600; margin-inline: 1px;">°</span> C
+    </div>
+    <p style="padding-top: 5px; font-weight: 500;">Feels like</p>
+    </div>
+    </div>
+   
+        <div class="column humidity">
+      <i class="bx bxs-droplet-half"></i>
+<div class="details">
+<span class="numb" style="font-weight: 600;">_</span>
+<p style="padding-top: 5px; font-weight: 500;">Humidity</p>
+</div>
+            </div>
+            
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
