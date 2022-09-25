@@ -32,7 +32,7 @@ function onError(error) {
   infoTxt.classList.add("error");
   console.log(error);
 }
-
+//Using Open WeatherMap API key
 function requestApi(city) {
   api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=6c8f7baf1b2df31009df5d3ceacbc221`;
   fetchData();
@@ -71,6 +71,22 @@ function weatherDetails(info) {
 
     // lets pass these values to a particular html element
     wrapper.querySelector(".temp .numb").innerText = Math.floor(temp);
+    wrapper.querySelector(".temp .deg").style.display = "block";
+    wrapper.querySelector(".details .temp .deg").style.display = "block";
+    wrapper.querySelector(".fahrenhite").style.display = "none";
+    wrapper.querySelector(".details .temp .fahrenhite").style.display = "none";
+    document.querySelector(".temp").onclick = function () {
+      wrapper.querySelector(".temp .numb").innerText =
+        Math.round(((temp * 9) / 5.0 + 32) * 100) / 100;
+      wrapper.querySelector(".temp .numb-2").innerText =
+        Math.round(((feels_like * 9) / 5.0 + 32) * 100) / 100;
+      wrapper.querySelector(".temp .deg").style.display = "none";
+      wrapper.querySelector(".details .temp .deg").style.display = "none";
+      wrapper.querySelector(".temp .fahrenhite").style.display = "block";
+      wrapper.querySelector(".details .temp .fahrenhite").style.display =
+        "block";
+    };
+
     wrapper.querySelector(".weather").innerText = description;
     wrapper.querySelector(".location span").innerText = `${city}, ${country}`;
     wrapper.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
