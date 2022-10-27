@@ -7,7 +7,7 @@
     <title>Weather</title>
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
   </head>
@@ -41,7 +41,7 @@
           <div class="column feels" style="border-right: 2px solid #bfbfbf">
             <i class="bx bxs-thermometer"></i>
             <div class="details">
-              <div class="temp" style="font-size: 18px">
+              <div class="temp" style="font-size: 18px; margin: 0">
                 <span class="numb-2" style="font-weight: 600">_</span>
                 <span class="deg" style="font-weight: 600; margin-inline: 1px"
                   >°C</span
@@ -52,16 +52,58 @@
             </div>
           </div>
 
-          <div class="column humidity">
+          <div class="column humidity" style="border-right: 2px solid #bfbfbf">
             <i class="bx bxs-droplet-half"></i>
             <div class="details">
               <span class="numb" style="font-weight: 600">_</span>
               <p style="padding-top: 5px; font-weight: 500">Humidity</p>
             </div>
           </div>
+          <div class="column pressure">
+            <i class="bx bx-tachometer"></i>
+            <div class="details">
+              <span class="numb-3" style="font-weight: 600">_</span>
+              <p style="padding-top: 5px; font-weight: 500">Pressure</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <div class="column wind" style="margin-bottom: 10px">
+            <i class="fa-solid fa-wind"></i>
+            <div class="details">
+              <span class="numb" style="font-weight: 600">_</span>
+              <p style="padding-top: 5px; font-weight: 500">Wind</p>
+            </div>
+          </div>
+          <div class="column temp_min" style="margin-bottom: 10px">
+            <i class="fa-solid fa-temperature-quarter"></i>
+            <div class="details">
+              <span class="numb" style="font-weight: 600">_</span>
+              <p style="padding-top: 5px; font-weight: 500">Min Temp</p>
+            </div>
+          </div>
+          <div class="column temp_max" style="margin-bottom: 10px">
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            <div class="details">
+              <span class="numb" style="font-weight: 600">_</span>
+              <p style="padding-top: 5px; font-weight: 500">Max Temp</p>
+            </div>
+          </div>
+          <div class="column visibility">
+            <i class="fa-regular fa-eye"></i>
+            <div class="details">
+              <span class="numb" style="font-weight: 600">_</span>
+              <p style="padding-top: 5px; font-weight: 500">Visibility</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script
+      src="https://kit.fontawesome.com/816049b747.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

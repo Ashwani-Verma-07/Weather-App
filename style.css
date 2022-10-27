@@ -158,10 +158,25 @@ header i {
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid #bfbfbf;
+  border-radius: 7px;
 }
-
+.weather-part {
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+.weather-part:hover {
+  transform: rotateY(180deg);
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.weather-part,
+.flip-card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 .bottom-details .column {
-  width: 100%;
+  width: 33%;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -179,7 +194,6 @@ header i {
 .humidity span {
   font-size: 18px;
   font-weight: 500;
-  /* margin-top: -0px; */
 }
 .details .temp .deg {
   margin: 0;
@@ -190,7 +204,14 @@ header i {
   font-size: 15px;
   margin-top: -6px;
 }
-
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 @media only screen and (min-width: 300px) and (max-width: 490px) {
   body {
     min-height: 25vh;

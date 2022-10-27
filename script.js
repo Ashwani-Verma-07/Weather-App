@@ -24,7 +24,8 @@ locationBtn.addEventListener("click", () => {
 
 function onSuccess(position) {
   const { latitude, longitude } = position.coords; //getting lat and lon of the user device from coords obj
-  api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=KEY`;
+  api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=KEY
+  `;
   fetchData();
 }
 function onError(error) {
@@ -34,7 +35,8 @@ function onError(error) {
 }
 //Using Open WeatherMap API key
 function requestApi(city) {
-  api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=KEY`;
+  api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=KEY
+  `;
   fetchData();
 }
 function fetchData() {
@@ -53,7 +55,10 @@ function weatherDetails(info) {
     const city = info.name;
     const country = info.sys.country;
     const { description, id } = info.weather[0];
-    const { feels_like, humidity, temp } = info.main;
+    const { feels_like, humidity, temp, pressure, temp_min, temp_max } =
+      info.main;
+    const { speed, deg } = info.wind;
+    const visibility = info.visibility;
 
     if (id == 800) {
       wIcon.src = "Weather_Icons/clear.svg";
@@ -91,6 +96,12 @@ function weatherDetails(info) {
     wrapper.querySelector(".location span").innerText = `${city}, ${country}`;
     wrapper.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
     wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
+    wrapper.querySelector(".pressure span").innerText = `${pressure}mb`;
+    wrapper.querySelector(".wind span").innerText = `${speed}Km/h`;
+
+    wrapper.querySelector(".temp_min span").innerText = `${temp_min}°C`;
+    wrapper.querySelector(".temp_max span").innerText = `${temp_max}°C`;
+    wrapper.querySelector(".visibility span").innerText = `${visibility}Km`;
     infoTxt.classList.remove("pending", "error");
     wrapper.classList.add("active");
     ClearFields();
